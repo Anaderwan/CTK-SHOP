@@ -1,6 +1,6 @@
 # 🛒 CTK SHOP
 
-Group Project
+Group Project Practice
 
 ---
 
@@ -33,17 +33,23 @@ Group Project
 
 ## 📦 Installation
 
-```bash
 # Clone the repository
+```bash
 git clone https://github.com/Anaderwan/CTK-SHOP
+```
 
 # Go into the project directory
+```bash
 cd project-name
+```
 
 # Install dependencies
+```bash
 npm install
+```
 
 # Start the development server
+```bash
 npm run dev
 ```
 
