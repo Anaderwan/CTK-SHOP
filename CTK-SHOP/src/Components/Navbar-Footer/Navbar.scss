@@ -1,0 +1,26 @@
+.full-width-navbar {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 1rem;
+  background-color: #00d1b2;
+
+  .full-width-navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar-item {
+    font-weight: bold;
+    color: white;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
