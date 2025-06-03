@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { Route, Routes, useNavigate } from 'react-router-dom';
 
 type RegisterProps = {
     makeAcc: (username: string, password: string, confirmPassword: string) => void;
