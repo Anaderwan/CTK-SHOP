@@ -53,10 +53,23 @@ const App: React.FC = () => {
           path="/register"
           element={<Register makeAcc={handleRegister} />}
         />
-        <Route
-          path="/success"
-          element={isLoggedIn ? <p>USPEH — You are logged in!</p> : <p>Access Denied</p>}
-        />
+        {/* <Route
+          path="/stores"
+          element={isLoggedIn ? element={<Stores-list />} : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/items"
+          element={isLoggedIn ? element={<Items-list/>} : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/create-store"
+          element={isLoggedIn ? element={<Create-store/>} : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/create-item"
+          element={isLoggedIn ? element={<Create-item/>} : <p>Access Denied</p>}
+        /> */}
+
         <Route path="*" element={<p>404 — Page Not Found</p>} />
       </Routes>
     </div>
@@ -64,7 +77,5 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-
 
 
