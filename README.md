@@ -1,13 +1,24 @@
-# CTK-SHOP
-Grupna Vjezba
-
 # 🛒 CTK SHOP
 
-## Opis projekta
+Group Project
 
-CTK SHOP je web aplikacija za upravljanje trgovinama i artiklima. Korisnici se mogu registrirati, prijaviti, kreirati trgovine i dodavati artikle.
+---
 
-## 🧑‍💻 Tehnologije
+## 🗒️ Description
+
+- CTK SHOP is a web application for managing stores and items.
+
+---
+
+## 🚀 Features
+
+- Users can register.
+- Management of shops and items.
+- Create stores and add items.
+
+---
+
+## 🧑‍💻 Tech Stack
 
 - **React** 
 - **TypeScript** 
@@ -17,6 +28,24 @@ CTK SHOP je web aplikacija za upravljanje trgovinama i artiklima. Korisnici se m
 - **React Router** 
 - **json-server** 
 - **Git + GitHub** 
+
+---
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Anaderwan/CTK-SHOP
+
+# Go into the project directory
+cd project-name
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
 
 
 
