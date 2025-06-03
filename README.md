@@ -52,7 +52,15 @@ npm install
 ```bash
 npm run dev
 ```
+# Packeging the Application
+```bash
+npm run build
+```
 
+# Testing the packaged folder
+```bash
+npm run preview
+```
 
 
 
