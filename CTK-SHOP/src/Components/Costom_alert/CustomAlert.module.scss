@@ -1,0 +1,53 @@
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2d2d2d;
+  border-left: 5px solid;
+  padding: 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  margin: 10px 0;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+.icon {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.message {
+  flex-grow: 1;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.success {
+  border-color: #00a757;
+  background-color: #1a3b2f;
+}
+
+.error {
+  border-color: #d9534f;
+  background-color: #3b1a1a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,70 @@
+@use './variables.scss' as variables;
+
+.store-card {
+  min-width: 250px;
+  display: inline-block;
+  background: rgb(255, 254, 254);
+  border-radius: 0.2rem;
+  padding: variables.$padding;
+  margin-bottom: variables.$margin;
+  margin-right: 8px;
+  margin-left: 16px;
+  box-shadow: 0 2px 4px rgba(56, 56, 56, 0.35);
+
+  h3 {
+    color: variables.$primary;
+    margin-bottom: 0.5rem;
+  }
+
+  .tag.name {
+    gap: 0.25rem;
+    background-color: variables.$secondary;
+    color: rgb(0, 0, 0);
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+
+  }
+
+  .button {
+    background-color: #E0E0E0;
+    margin-right: 0.6rem;
+    margin-left: 0.2rem;
+  }
+
+  .item {
+    display: block;
+    gap: 0.25rem;
+    max-width: fit-content;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.1rem;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    font-weight: 450;
+  }
+
+  .button.is-danger {
+    background-color: #d30707; // your custom red
+    color: white;
+    border: none;
+  }
+
+  .botuni {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 4.2rem;
+
+  }
+
+  p {
+    font-weight: 400;
+  }
+
+  .trgovine-title {
+    margin-left: 200px;
+
+  }
+
+
+}

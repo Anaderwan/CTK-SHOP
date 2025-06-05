@@ -1,26 +1,53 @@
-.full-width-navbar {
-  width: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  padding: 0 1rem;
-  background-color: #00d1b2;
+.navbar {
+  background: #1f1f1f;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
 
-  .full-width-navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: #E9E0D1;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #00A757;
+    color: #2D2D2D;
   }
 
-  .navbar-item {
-    font-weight: bold;
-    color: white;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
+  &.active {
+    background: #00A757;
+    color: #2D2D2D;
   }
 }
 
+.username {
+  color: #E9E0D1;
+  font-weight: bold;
+}
+
+.logout-button {
+  background: transparent;
+  border: 2px solid #E9E0D1;
+  color: #E9E0D1;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #E9E0D1;
+    color: #2D2D2D;
+  }
+}

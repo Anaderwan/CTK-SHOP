@@ -5,26 +5,38 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "tsc -b && vite build",
+    "build:app": "tsc -b tsconfig.app.json",
+    "build:node": "tsc -b tsconfig.node.json",
+    "build:server": "tsc -b tsconfig.server.json",
+    "clean": "rimraf dist node_modules/.tmp",
+    "dev:server": "tsx watch server/index.ts",
+    "json": "json-server --watch db.json --port 3000"
   },
   "dependencies": {
+    "axios": "^1.9.0",
     "bulma": "^1.0.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.6.1",
+    "react-router-dom": "^7.6.2",
     "sass": "^1.89.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "json-server": "^0.17.4",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.7.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5"

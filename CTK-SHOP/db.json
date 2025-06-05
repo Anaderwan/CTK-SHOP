@@ -1,0 +1,31 @@
+{
+  "stores": [
+    {
+      "id": "1",
+      "name": "Plodine",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Brodokomerc",
+      "tags": []
+    }
+  ],
+  "items": [
+    {
+      "id": "1",
+      "name": "ormar",
+      "price": 20,
+      "store": {
+        "id": "1",
+        "name": "Plodine"
+      },
+      "tags": [
+        { "id": "1", "name": "supermarket" }
+      ]
+    }
+  ]
+}

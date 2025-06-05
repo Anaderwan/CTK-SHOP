@@ -1,0 +1,17 @@
+@use './variables.scss' as variables;
+
+body {
+  padding: 20px;
+  font-family: variables.$font-stack;
+  background-color: variables.$light;
+  color: variables.$dark;
+
+}
+
+.container {
+  max-width: 1200px;
+  min-width: 600px;
+  margin: 20px;
+  padding: variables.$padding;
+  display: inline-block
+}
