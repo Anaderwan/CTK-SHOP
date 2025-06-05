@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
-import LogIn from './Components/Login-Register/Login';
-import Register from './Components/Login-Register/Register';
+import LogIn from './components/authentication/Login';
+import Register from './components/authentication/Register';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import './Components/Login-Register/Login.scss';
+import './components/authentication/Login.scss';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -25,13 +25,13 @@ const App: React.FC = () => {
     loginErrorTimer.current = window.setTimeout(() => setLoginError(null), 10000);
   };
 
-  const setTimedRegisterError = (message: string) => {
-    setRegisterError(message);
-    if (registerErrorTimer.current !== null) {
-      clearTimeout(registerErrorTimer.current);
-    }
-    registerErrorTimer.current = window.setTimeout(() => setRegisterError(null), 10000);
-  };
+  // const setTimedRegisterError = (message: string) => {
+  //   setRegisterError(message);
+  //   if (registerErrorTimer.current !== null) {
+  //     clearTimeout(registerErrorTimer.current);
+  //   }
+  //   registerErrorTimer.current = window.setTimeout(() => setRegisterError(null), 10000);
+  // };
 
   const handleLogin = (username: string, password: string): void => {
     if (username.trim() === '' || password.trim() === '') {
@@ -49,21 +49,21 @@ const App: React.FC = () => {
   };
 
   const handleRegister = (username: string, password: string, confirmPassword: string): void => {
-    if (!username || !password || !confirmPassword) {
-      setTimedRegisterError('All fields are required.');
-      return;
-    }
+  if (!username || !password || !confirmPassword) {
+    setRegisterError("All fields are required.");
+    return;
+  }
 
-    if (password !== confirmPassword) {
-      setTimedRegisterError("Passwords don't match.");
-      return;
-    }
+  if (password !== confirmPassword) {
+    setRegisterError("Passwords don't match.");
+    return;
+  }
 
-    setValidUserName(username);
-    setValidPassword(password);
-    setRegisterError(null);
-    navigate('/', { state: { registered: true } });
-  };
+  setValidUserName(username);
+  setValidPassword(password);
+  setRegisterError(null);
+  navigate('/', { state: { registered: true } });
+};
 
   // Optional: cleanup timers on unmount
   useEffect(() => {
@@ -92,7 +92,6 @@ const App: React.FC = () => {
             <Register
               makeAcc={handleRegister}
               error={registerError}
-              clearError={() => setRegisterError(null)}
             />
           }
         />
