@@ -3,7 +3,9 @@ import './App.css';
 import LogIn from './components/authentication/Login';
 import Register from './components/authentication/Register';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import './components/authentication/Login.scss';
+import './components/authentication/Login.scss';// Importing styles for the login component
+import StoresList from './components/store/Stores-list';
+import CreateStore from './components/store/CreateStore';
 import ItemsList from './components/Items-folder/Items-list';
 import Layout from './components/Layout';
 import CreateItem from './components/Items-folder/CreateItem';
