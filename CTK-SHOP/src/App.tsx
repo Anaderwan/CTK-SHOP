@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
-import LogIn from './components/authentication/Login';
-import Register from './components/authentication/Register';
+import LogIn from './main-components/authentication/Login';
+import Register from './main-components/authentication/Register';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './components/authentication/Login.scss';
 
