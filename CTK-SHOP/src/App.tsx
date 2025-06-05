@@ -17,21 +17,23 @@ const App: React.FC = () => {
   const loginErrorTimer = useRef<number | null>(null);
   const registerErrorTimer = useRef<number | null>(null);
 
+  // Auto-dismiss login error
   const setTimedLoginError = (message: string) => {
-    setLoginError(message);
-    if (loginErrorTimer.current !== null) {
-      clearTimeout(loginErrorTimer.current);
-    }
-    loginErrorTimer.current = window.setTimeout(() => setLoginError(null), 10000);
-  };
+  setLoginError(`${message}-${Date.now()}`);  // add a unique suffix
+  if (loginErrorTimer.current !== null) {
+    clearTimeout(loginErrorTimer.current);
+  }
+  loginErrorTimer.current = window.setTimeout(() => setLoginError(null), 10000);
+};
 
-  // const setTimedRegisterError = (message: string) => {
-  //   setRegisterError(message);
-  //   if (registerErrorTimer.current !== null) {
-  //     clearTimeout(registerErrorTimer.current);
-  //   }
-  //   registerErrorTimer.current = window.setTimeout(() => setRegisterError(null), 10000);
-  // };
+  // Auto-dismiss register error
+  const setTimedRegisterError = (message: string) => {
+  setRegisterError(`${message}-${Date.now()}`);  // add a unique suffix
+  if (registerErrorTimer.current !== null) {
+    clearTimeout(registerErrorTimer.current);
+  }
+  registerErrorTimer.current = window.setTimeout(() => setRegisterError(null), 10000);
+};
 
   const handleLogin = (username: string, password: string): void => {
     if (username.trim() === '' || password.trim() === '') {
@@ -49,23 +51,23 @@ const App: React.FC = () => {
   };
 
   const handleRegister = (username: string, password: string, confirmPassword: string): void => {
-  if (!username || !password || !confirmPassword) {
-    setRegisterError("All fields are required.");
-    return;
-  }
+    if (!username || !password || !confirmPassword) {
+      setTimedRegisterError("All fields are required.");
+      return;
+    }
 
-  if (password !== confirmPassword) {
-    setRegisterError("Passwords don't match.");
-    return;
-  }
+    if (password !== confirmPassword) {
+      setTimedRegisterError("Passwords don't match.");
+      return;
+    }
 
-  setValidUserName(username);
-  setValidPassword(password);
-  setRegisterError(null);
-  navigate('/', { state: { registered: true } });
-};
+    setValidUserName(username);
+    setValidPassword(password);
+    setRegisterError(null);
+    navigate('/', { state: { registered: true } });
+  };
 
-  // Optional: cleanup timers on unmount
+  // Cleanup timers on unmount
   useEffect(() => {
     return () => {
       if (loginErrorTimer.current !== null) clearTimeout(loginErrorTimer.current);

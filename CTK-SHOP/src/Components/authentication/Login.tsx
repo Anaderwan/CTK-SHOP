@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import ErrorMessage from "../toaster/ErrorMessage";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.scss";
 
 type LogInProps = {
@@ -13,6 +13,15 @@ const LogIn: React.FC<LogInProps> = ({ callback, goToRegister, error }) => {
   const inpUser = useRef<HTMLInputElement>(null);
   const inpPass = useRef<HTMLInputElement>(null);
   const location = useLocation();
+  const navigate = useNavigate(); // new line
+  const [justRegistered, setJustRegistered] = useState(false);
+
+  useEffect(() => {
+  if (location.state?.registered) {
+    setJustRegistered(true); // keep it locally
+    navigate(location.pathname, { replace: true, state: {} }); // then clear location.state
+  }
+}, [location, navigate]);
 
   const handleSignIn = () => {
     const username = inpUser.current?.value.trim() || "";
@@ -25,10 +34,10 @@ const LogIn: React.FC<LogInProps> = ({ callback, goToRegister, error }) => {
     <div className="login-container box">
       <h3 className="title is-4 has-text-centered">Login</h3>
 
-      {location.state?.registered && (
+      {justRegistered && (
         <ErrorMessage type="success" message="Account was created successfully!" />
       )}
-      {error && <ErrorMessage type="error" message={error} />}
+      {error && <ErrorMessage key={error} type="error" message={error} />}
 
       <div className="field">
         <label className="label">Username</label>
