@@ -4,7 +4,9 @@ import LogIn from './components/authentication/Login';
 import Register from './components/authentication/Register';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './components/authentication/Login.scss';
+import ItemsList from './components/Items-folder/Items-list';
 import Layout from './components/Layout';
+import CreateItem from './components/Items-folder/CreateItem';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -45,7 +47,7 @@ const App: React.FC = () => {
     if (username === validUser && password === validPass) {
       setIsLoggedIn(true);
       setLoginError(null);
-      navigate('/success');
+      navigate('/layout/items');
     } else {
       setTimedLoginError('Invalid username or password.');
     }
@@ -98,34 +100,31 @@ const App: React.FC = () => {
             />
           }
         />
-        {/* <Route
-          path="/success"
-          element={isLoggedIn ? <Stores/> : <p>Access Denied</p>}
-        /> */}
-        {/* <Route
-          path="/items"
-          element={isLoggedIn ? element={<Items-list/>} : <p>Access Denied</p>}
-        /> */}
+        <Route path='/layout' element={<Layout/>}>
+          <Route
+          path="/layout/items"
+          element={isLoggedIn ? <ItemsList /> : <p>Access Denied</p>}
+        />
+        
+       
+          {/* <Route
+            path="/success"
+            element={isLoggedIn ? <Stores/> : <p>Access Denied</p>}
+          /> */}
         {/* <Route
           path="/create-store"
           element={isLoggedIn ? element={<Create-store/>} : <p>Access Denied</p>}
         /> */}
-        {/* <Route
-          path="/create-item"
-          element={isLoggedIn ? element={<Create-item/>} : <p>Access Denied</p>}
-        /> */}
+        <Route
+          path="/layout/create-item"
+          element={isLoggedIn ? <CreateItem/>: <p>Access Denied</p>}
+        />
 
         <Route path="*" element={<p>404 — Page Not Found</p>} />
+        </Route>
+        
       </Routes>
     </div>
-
-    // <div>
-    //   <Routes>
-    //     <Route path="/" element={<Layout />}>
-    //     <Route path="/s"></Route>
-    //     </Route>
-    //   </Routes>
-    // </div>
   );
 };
 

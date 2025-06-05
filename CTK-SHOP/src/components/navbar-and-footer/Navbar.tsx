@@ -26,8 +26,8 @@ const Navbar: React.FC = () => {
               <span>Stores</span>
             </Link>
             <Link
-              to="/items"
-              className={`navbar-item${location.pathname === "/items" ? " is-active" : ""}`}
+              to="/layout/items"
+              className={`navbar-item${location.pathname === "/layout/items" ? " is-active" : ""}`}
             >
               <span className="icon"><i className="fas fa-box-open"></i></span>
               <span>Items</span>
@@ -42,8 +42,8 @@ const Navbar: React.FC = () => {
               <span>Create Store</span>
             </Link>
             <Link
-              to="/create-item"
-              className={`navbar-item${location.pathname === "/create-item" ? " is-active" : ""}`}
+              to="/layout/create-item"
+              className={`navbar-item${location.pathname === "/layout/create-item" ? " is-active" : ""}`}
             >
               <span className="icon"><i className="fas fa-plus-square"></i></span>
               <span>Create Item</span>

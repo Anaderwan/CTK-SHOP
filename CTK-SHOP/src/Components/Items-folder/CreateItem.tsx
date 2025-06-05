@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import type { Item } from "./ItemsType";
-import ItemForm from "./Item-form";
+import ItemForCreate from "./ItemForCreate";
 // import Navbar from "../Navbar-Footer/Navbar";
 const CreateItem = () => {
   const [item, setItem] = useState<Item>({
@@ -14,6 +14,7 @@ const CreateItem = () => {
 
   function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
+    const myId = Number(value);
 
     if (!item) return;
 
@@ -27,17 +28,11 @@ const CreateItem = () => {
         case "price":
           updatedItem.price = Number(value);
           break;
-        case "storeName":
-          updatedItem.store = { ...prev.store, name: value };
+        case "id":
+          
+          updatedItem.store = { ...prev.store, id: myId };
           break;
-        case "tag0":
-          updatedItem.tags = [...prev.tags];
-          if (updatedItem.tags.length > 0) {
-            updatedItem.tags[0] = { ...updatedItem.tags[0], name: value };
-          } else {
-            updatedItem.tags.push({ id: 0, name: value });
-          }
-          break;
+       
         default:
           break;
       }
@@ -73,7 +68,7 @@ const CreateItem = () => {
   }
   return (
     <div>
-      <ItemForm item={item} onInputChange={onInputChange} onSave={onSave} />
+      <ItemForCreate item={item} onInputChange={onInputChange} onSave={onSave} />
     </div>
   );
 };
