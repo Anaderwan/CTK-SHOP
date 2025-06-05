@@ -1,0 +1,102 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "fdsf",
+      "price": 23,
+      "store": {
+        "id": 1,
+        "name": "Plodine"
+      },
+      "tags": [
+        {
+          "id": 1,
+          "name": "bfbdf"
+        },
+        {
+          "id": 3,
+          "name": "tigra"
+        },
+        {
+          "id": 4,
+          "name": "bfbdf"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "Toma",
+      "price": 1,
+      "store": {
+        "id": 0,
+        "name": "Kizo"
+      },
+      "tags": [
+        {
+          "id": 0,
+          "name": "blabla"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "fdsf",
+      "price": 3,
+      "store": {
+        "id": 0,
+        "name": ""
+      },
+      "tags": [
+        {
+          "id": 0,
+          "name": "tigra"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "Laptop",
+      "price": 2,
+      "store": {
+        "id": 0,
+        "name": "Links"
+      },
+      "tags": [
+        {
+          "id": 0,
+          "name": "skupo"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "Majca",
+      "price": 3,
+      "store": {
+        "id": 1,
+        "name": ""
+      },
+      "tags": [
+        {
+          "id": 0,
+          "name": ""
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "fdsf",
+      "price": 1,
+      "store": {
+        "id": 1,
+        "name": ""
+      },
+      "tags": [
+        {
+          "id": 0,
+          "name": ""
+        }
+      ]
+    }
+  ]
+}
