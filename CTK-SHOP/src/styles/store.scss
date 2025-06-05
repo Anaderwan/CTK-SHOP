@@ -1,0 +1,87 @@
+/* @use './variables.scss' as variables;
+
+.store-card {
+  background: white;
+  border: 1px solid variables.$dark;
+  border-radius: variables.$border-radius;
+  padding: variables.$padding;
+  margin-bottom: variables.$margin;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  h3 {
+    color: variables.$primary;
+    margin-bottom: 0.5rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
+    span {
+      background-color: variables.$secondary;
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+} */
+
+@use './variables.scss' as variables;
+
+.store-card {
+  background: white;
+  border: 1px solid variables.$light;
+  border-radius: variables.$border-radius;
+  padding: variables.$padding;
+  margin-bottom: variables.$margin;
+  box-shadow: variables.$card-shadow;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.15);
+    border-color: variables.$primary;
+  }
+
+  h2, h3 {
+    color: variables.$primary;
+    margin-bottom: 0.5rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+
+    span {
+      background-color: variables.$secondary;
+      color: white;
+      padding: 0.2rem 0.7rem;
+      border-radius: 1rem;
+      font-size: 0.85rem;
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .items {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
+    span {
+      background-color: variables.$primary;
+      color: white;
+      padding: 0.2rem 0.7rem;
+      border-radius: 1rem;
+      font-size: 0.85rem;
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+  }
+}

@@ -23,7 +23,8 @@ const StoreList = () => {
   }, []);
 
   return (
-    <div>
+/*     <div> */
+    <div className="store-grid">
       {stores.map(store => {
         // Filtriraj artikle koji pripadaju ovom store-u
         const storeItems = items.filter(

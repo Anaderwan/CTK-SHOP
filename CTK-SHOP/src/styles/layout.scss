@@ -1,0 +1,41 @@
+/* @use './variables.scss' as variables;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: variables.$font-stack;
+  background-color: variables.$light;
+  color: variables.$dark;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: variables.$padding;
+} */
+
+@use './variables.scss' as variables;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: variables.$font-stack;
+  background-color: variables.$light;
+  color: variables.$dark;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: variables.$margin;
+  padding: variables.$margin;
+  justify-items: stretch;
+  align-items: stretch;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
