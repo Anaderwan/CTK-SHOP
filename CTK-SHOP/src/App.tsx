@@ -4,7 +4,7 @@ import LogIn from './components/authentication/Login';
 import Register from './components/authentication/Register';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './components/authentication/Login.scss';
-import Layout from './Components/Layout';
+import Layout from './components/Layout';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -77,55 +77,55 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    // <div className="logInField">
-    //   <Routes>
-    //     <Route
-    //       path="/"
-    //       element={
-    //         <LogIn
-    //           callback={handleLogin}
-    //           goToRegister={() => navigate('/register')}
-    //           error={loginError}
-    //         />
-    //       }
-    //     />
-    //     <Route
-    //       path="/register"
-    //       element={
-    //         <Register
-    //           makeAcc={handleRegister}
-    //           error={registerError}
-    //         />
-    //       }
-    //     />
-    //     {/* <Route
-    //       path="/success"
-    //       element={isLoggedIn ? <Stores/> : <p>Access Denied</p>}
-    //     /> */}
-    //     {/* <Route
-    //       path="/items"
-    //       element={isLoggedIn ? element={<Items-list/>} : <p>Access Denied</p>}
-    //     /> */}
-    //     {/* <Route
-    //       path="/create-store"
-    //       element={isLoggedIn ? element={<Create-store/>} : <p>Access Denied</p>}
-    //     /> */}
-    //     {/* <Route
-    //       path="/create-item"
-    //       element={isLoggedIn ? element={<Create-item/>} : <p>Access Denied</p>}
-    //     /> */}
-
-    //     <Route path="*" element={<p>404 — Page Not Found</p>} />
-    //   </Routes>
-    // </div>
-
-    <div>
+    <div className="logInField">
       <Routes>
-        <Route path="/" element={<Layout />}>
-        <Route path="/s"></Route>
-        </Route>
+        <Route
+          path="/"
+          element={
+            <LogIn
+              callback={handleLogin}
+              goToRegister={() => navigate('/register')}
+              error={loginError}
+            />
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Register
+              makeAcc={handleRegister}
+              error={registerError}
+            />
+          }
+        />
+        {/* <Route
+          path="/success"
+          element={isLoggedIn ? <Stores/> : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/items"
+          element={isLoggedIn ? element={<Items-list/>} : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/create-store"
+          element={isLoggedIn ? element={<Create-store/>} : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/create-item"
+          element={isLoggedIn ? element={<Create-item/>} : <p>Access Denied</p>}
+        /> */}
+
+        <Route path="*" element={<p>404 — Page Not Found</p>} />
       </Routes>
     </div>
+
+    // <div>
+    //   <Routes>
+    //     <Route path="/" element={<Layout />}>
+    //     <Route path="/s"></Route>
+    //     </Route>
+    //   </Routes>
+    // </div>
   );
 };
 
