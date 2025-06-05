@@ -1,30 +1,132 @@
-import { Route, Routes } from 'react-router'
-import Navbar from './Components/Navbar-Footer/Navbar'
-import Footer from './Components/Navbar-Footer/Footer'
+import { useState, useRef, useEffect } from 'react';
+import './App.css';
+import LogIn from './components/authentication/Login';
+import Register from './components/authentication/Register';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import './components/authentication/Login.scss';
+import Layout from './Components/Layout';
 
-import './App.css'
+const App: React.FC = () => {
+  const navigate = useNavigate();
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [validUser, setValidUserName] = useState('');
+  const [validPass, setValidPassword] = useState('');
+  const [loginError, setLoginError] = useState<string | null>(null);
+  const [registerError, setRegisterError] = useState<string | null>(null);
 
-function App() {
-  
+  const loginErrorTimer = useRef<number | null>(null);
+  const registerErrorTimer = useRef<number | null>(null);
+
+  // Auto-dismiss login error
+  const setTimedLoginError = (message: string) => {
+  setLoginError(`${message}-${Date.now()}`);  // add a unique suffix
+  if (loginErrorTimer.current !== null) {
+    clearTimeout(loginErrorTimer.current);
+  }
+  loginErrorTimer.current = window.setTimeout(() => setLoginError(null), 10000);
+};
+
+  // Auto-dismiss register error
+  const setTimedRegisterError = (message: string) => {
+  setRegisterError(`${message}-${Date.now()}`);  // add a unique suffix
+  if (registerErrorTimer.current !== null) {
+    clearTimeout(registerErrorTimer.current);
+  }
+  registerErrorTimer.current = window.setTimeout(() => setRegisterError(null), 10000);
+};
+
+  const handleLogin = (username: string, password: string): void => {
+    if (username.trim() === '' || password.trim() === '') {
+      setTimedLoginError('Please fill in all fields.');
+      return;
+    }
+
+    if (username === validUser && password === validPass) {
+      setIsLoggedIn(true);
+      setLoginError(null);
+      navigate('/success');
+    } else {
+      setTimedLoginError('Invalid username or password.');
+    }
+  };
+
+  const handleRegister = (username: string, password: string, confirmPassword: string): void => {
+    if (!username || !password || !confirmPassword) {
+      setTimedRegisterError("All fields are required.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setTimedRegisterError("Passwords don't match.");
+      return;
+    }
+
+    setValidUserName(username);
+    setValidPassword(password);
+    setRegisterError(null);
+    navigate('/', { state: { registered: true } });
+  };
+
+  // Cleanup timers on unmount
+  useEffect(() => {
+    return () => {
+      if (loginErrorTimer.current !== null) clearTimeout(loginErrorTimer.current);
+      if (registerErrorTimer.current !== null) clearTimeout(registerErrorTimer.current);
+    };
+  }, []);
 
   return (
-    <>
+    // <div className="logInField">
+    //   <Routes>
+    //     <Route
+    //       path="/"
+    //       element={
+    //         <LogIn
+    //           callback={handleLogin}
+    //           goToRegister={() => navigate('/register')}
+    //           error={loginError}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/register"
+    //       element={
+    //         <Register
+    //           makeAcc={handleRegister}
+    //           error={registerError}
+    //         />
+    //       }
+    //     />
+    //     {/* <Route
+    //       path="/success"
+    //       element={isLoggedIn ? <Stores/> : <p>Access Denied</p>}
+    //     /> */}
+    //     {/* <Route
+    //       path="/items"
+    //       element={isLoggedIn ? element={<Items-list/>} : <p>Access Denied</p>}
+    //     /> */}
+    //     {/* <Route
+    //       path="/create-store"
+    //       element={isLoggedIn ? element={<Create-store/>} : <p>Access Denied</p>}
+    //     /> */}
+    //     {/* <Route
+    //       path="/create-item"
+    //       element={isLoggedIn ? element={<Create-item/>} : <p>Access Denied</p>}
+    //     /> */}
 
-      {/* <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register/>}/>
-        <Route path="/stores" element={<Stores-list />} />
-        <Route path="/items" element={<Items-list/>}/>
-        <Route path="/create-store" element={<Create-store/>}/>
-        <Route path="/creat-item" element={<Create-item/>}/>
-        
-      </Routes> */}
-<Navbar/>
-<Footer/>
-    </>
+    //     <Route path="*" element={<p>404 — Page Not Found</p>} />
+    //   </Routes>
+    // </div>
 
-  )
-}
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+        <Route path="/s"></Route>
+        </Route>
+      </Routes>
+    </div>
+  );
+};
 
-export default App
+export default App;

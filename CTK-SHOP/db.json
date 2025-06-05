@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "fdsf",
+      "price": 23,
+      "store": {
+        "id": 1,
+        "name": "Plodine"
+      },
+      "tags": [
+        {
+          "id": 1,
+          "name": "bfbdf"
+        },
+        {
+          "id": 2,
+          "name": "korina"
+        },
+        {
+          "id": 3,
+          "name": "tigra"
+        },
+        {
+          "id": 4,
+          "name": "bfbdf"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "Toma",
+      "price": 1,
+      "store": {
+        "id": 0,
+        "name": "Kizo"
+      },
+      "tags": [
+        {
+          "id": 0,
+          "name": "blabla"
+        }
+      ]
+    }
+  ]
+}
