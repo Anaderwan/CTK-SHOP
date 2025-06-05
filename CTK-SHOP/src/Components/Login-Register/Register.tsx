@@ -10,7 +10,7 @@ type RegisterProps = {
 const FADE_DURATION = 300; // ms
 const ALERT_DURATION = 3000; // ms
 
-const Register: React.FC<RegisterProps> = ({ makeAcc, error, clearError }) => {
+const Register: React.FC<RegisterProps> = ({ makeAcc, error}) => {
   const inpUser = useRef<HTMLInputElement>(null);
   const inpPass = useRef<HTMLInputElement>(null);
   const inpPassConf = useRef<HTMLInputElement>(null);
