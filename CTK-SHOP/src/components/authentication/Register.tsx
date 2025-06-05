@@ -17,14 +17,15 @@ const Register: React.FC<RegisterProps> = ({ makeAcc, error }) => {
     const confirmPassword = inpPassConf.current?.value.trim();
 
     if (!username || !password || !confirmPassword) {
-    return makeAcc('', '', ''); // Will trigger parent error state
+      makeAcc('', '', '');
+      return; // Will trigger parent error state
     }
 
     if (password !== confirmPassword) {
-    return makeAcc(username, password, ''); // Triggers mismatch error
+      makeAcc(username, password, ''); // Triggers mismatch error
+      return
     }
 
-makeAcc(username, password, confirmPassword);
     makeAcc(username, password, confirmPassword);
 
     if (inpUser.current) inpUser.current.value = "";
