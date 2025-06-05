@@ -36,7 +36,9 @@ makeAcc(username, password, confirmPassword);
     <div className="login-container box">
       <h3 className="title is-4 has-text-centered">Register</h3>
 
-      {error && <ErrorMessage type="error" message={error} />}
+      <div style={{width: "100%", height: "75px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+        {error && <ErrorMessage type="error" message={error} />}
+      </div>
 
       <div className="field">
         <label className="label">Username</label>

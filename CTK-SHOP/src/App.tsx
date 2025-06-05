@@ -97,6 +97,23 @@ const App: React.FC = () => {
             />
           }
         />
+        {/* <Route
+          path="/success"
+          element={isLoggedIn ? <Stores/> : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/items"
+          element={isLoggedIn ? element={<Items-list/>} : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/create-store"
+          element={isLoggedIn ? element={<Create-store/>} : <p>Access Denied</p>}
+        /> */}
+        {/* <Route
+          path="/create-item"
+          element={isLoggedIn ? element={<Create-item/>} : <p>Access Denied</p>}
+        /> */}
+
         <Route path="*" element={<p>404 — Page Not Found</p>} />
       </Routes>
     </div>

@@ -34,10 +34,12 @@ const LogIn: React.FC<LogInProps> = ({ callback, goToRegister, error }) => {
     <div className="login-container box">
       <h3 className="title is-4 has-text-centered">Login</h3>
 
-      {justRegistered && (
-        <ErrorMessage type="success" message="Account was created successfully!" />
-      )}
-      {error && <ErrorMessage key={error} type="error" message={error} />}
+      <div style={{width: "100%", height: "75px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+        {justRegistered && (
+          <ErrorMessage type="success" message="Account was created successfully!" />
+        )}
+        {error && <ErrorMessage key={error} type="error" message={error} />}
+      </div>
 
       <div className="field">
         <label className="label">Username</label>
