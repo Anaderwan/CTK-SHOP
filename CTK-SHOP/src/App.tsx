@@ -56,15 +56,15 @@ const App: React.FC = () => {
   };
 
   const handleRegister = (username: string, password: string, confirmPassword: string): void => {
+    if (password !== confirmPassword) {
+      setTimedRegisterError("Passwords don't match.");
+      return;
+    }
     if (!username || !password || !confirmPassword) {
       setTimedRegisterError("All fields are required.");
       return;
     }
 
-    if (password !== confirmPassword) {
-      setTimedRegisterError("Passwords don't match.");
-      return;
-    }
 
     setValidUserName(username);
     setValidPassword(password);
