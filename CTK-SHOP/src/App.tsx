@@ -79,8 +79,9 @@ const App: React.FC = () => {
       if (registerErrorTimer.current !== null) clearTimeout(registerErrorTimer.current);
     };
   }, []);
+  const layout: string = "/layout";
 
-  return (
+  return (    
     <div className="logInField">
       <Routes>
         <Route
@@ -102,23 +103,22 @@ const App: React.FC = () => {
             />
           }
         />
-        <Route path='/layout' element={<Layout/>}>
+       
+        <Route path={layout} element={<Layout/>}>
           <Route
-          path="/layout/items"
+          path={`${layout}/items`}
           element={isLoggedIn ? <ItemsList /> : <p>Access Denied</p>}
         />
-        
-       
           {/* <Route
-            path="/success"
+            path={`${layout}/stores`}
             element={isLoggedIn ? <Stores/> : <p>Access Denied</p>}
-          /> */}
-        {/* <Route
-          path="/create-store"
+          /> 
+         <Route
+          path={`${layout}/create-store`}
           element={isLoggedIn ? element={<Create-store/>} : <p>Access Denied</p>}
         /> */}
         <Route
-          path="/layout/create-item"
+          path={`${layout}/create-item`}
           element={isLoggedIn ? <CreateItem/>: <p>Access Denied</p>}
         />
 
