@@ -1,12 +1,16 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Navbar.scss';
 
-const Navbar = ({ username }: { username: string }) => {
+interface NavbarProps {
+  username: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ username }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    navigate('/');
-    location.reload();
+    navigate('/'); // vrati na login
+    location.reload(); // resetira stanje aplikacije
   };
 
   return (
@@ -14,25 +18,28 @@ const Navbar = ({ username }: { username: string }) => {
       <div className="nav-content">
         <div className="nav-left">
           <NavLink
-            to="/stores"
+            to="/app/stores"
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
           >
             <span>Stores</span>
           </NavLink>
+
           <NavLink
-            to="/items"
+            to="/app/items"
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
           >
             <span>Items</span>
           </NavLink>
+
           <NavLink
-            to="/create-store"
+            to="/app/create-store"
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
           >
             <span>Create Store</span>
           </NavLink>
+
           <NavLink
-            to="/create-item"
+            to="/app/create-item"
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
           >
             <span>Create Item</span>

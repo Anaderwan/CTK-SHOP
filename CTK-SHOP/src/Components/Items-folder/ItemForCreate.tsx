@@ -1,23 +1,13 @@
 import React from "react";
-import type { Item, Tag } from "./ItemsType";
+import type { Item } from "./ItemsType";
 
 interface Props {
   item: Item;
   onSave: () => void;
   onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void; //ovo tu React.ChangeEvent<HTMLInputElement> je neka typescript shema to neznam objasniti
-  onAddTag?: () => void;
-  tag?: Tag;
-  onDeleteTag?: (id: number) => void;
 }
 
-const ItemForm = ({
-  item,
-  onSave,
-  onInputChange,
-  onAddTag,
-  tag,
-  onDeleteTag,
-}: Props) => {
+const ItemForCreate = ({ item, onSave, onInputChange }: Props) => {
   return (
     <div>
       <label htmlFor="name">Name</label>
@@ -36,26 +26,19 @@ const ItemForm = ({
         onChange={onInputChange}
       />
 
-      <label htmlFor="storeName">Store Name: {item.store.name}</label>
-
-      <label htmlFor="tag0">Tag</label>
+      <label htmlFor="storeID">Store ID</label>
       <input
-        type="text"
-        name="tag0"
-        value={tag?.name || ""}
+        type="number"
+        name="id"
+        value={item.store.id}
         onChange={onInputChange}
       />
-     {item.tags.map((tag) => (
-  <div key={tag.id}>
-    <span>{tag.name}</span>
-    <button type="button" onClick={() => onDeleteTag?.(tag.id)}>Delete</button>
-  </div>
-))}
-      <button onClick={onAddTag}>Add tag</button>
+
+      
 
       <button onClick={onSave}>Save</button>
     </div>
   );
 };
 
-export default ItemForm;
+export default ItemForCreate;

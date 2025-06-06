@@ -6,7 +6,7 @@ const CreateStore = () => {
 
   const handleSave = () => {
     alert('Trgovina je spremljena!');
-    navigate('/stores'); // ili gdje god želiš nakon spremanja
+    navigate('/stores'); 
   };
 
   return (

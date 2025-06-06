@@ -1,30 +1,17 @@
-import type { Item } from '../Store-folder/Store-type';
-
-type Props = {
-  item: Item;
-};
-
-const ItemCard: React.FC<Props> = ({ item }) => {
+import type { Item } from "./ItemsType";
+interface Props {
+    item:Item;
+}
+const ItemCard = ({item}: Props )=> {
   return (
-    <div className="item-card">
-      <h3>{item.name}</h3>
-      <p>Cijena: {item.price ?? 'N/A'} €</p>
-      {item.tags?.length ? (
-        <div className="tags">
-          {item.tags.map((tag, idx) => (
-            <span key={tag.id ?? idx}>{tag.name}</span>
-          ))}
-        </div>
-      ) : (
-        <p>Nema tagova</p>
-      )}
-      {item.store ? (
-        <p>Trgovina: {item.store.name}</p>
-      ) : (
-        <p>Bez povezane trgovine</p>
-      )}
+    <div>
+      <strong>{item.name}</strong> – ${item.price.toFixed(2)} <br />
+          Store: {item.store.name} <br />
+          Tags: {item.tags.map((tag) => tag.name).join(", ")}
     </div>
-  );
-};
+  )
+}
 
-export default ItemCard;
+
+
+export default ItemCard
