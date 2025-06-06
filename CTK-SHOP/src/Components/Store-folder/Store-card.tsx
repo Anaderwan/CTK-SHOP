@@ -2,12 +2,15 @@ import type { Store } from './Store-type';
 
 interface Props {
   store: Store;
+  onEdit: () => void;
+  onDelete: () => void;
 }
 
-const StoreCard = ({ store }: Props) => {
+const StoreCard = ({ store, onEdit, onDelete }: Props) => {
   return (
     <div className="store-card">
       <h2 className="title is-3">{store.name}</h2>
+
       <p><strong>Tags:</strong></p>
       <p>
         {store.tags?.length
@@ -18,24 +21,24 @@ const StoreCard = ({ store }: Props) => {
             ))
           : "Nema tagova"}
       </p>
+
       <div>
         <p><strong>Items:</strong></p>
         <p>
-        {store.items && store.items.length > 0
-          ? store.items.map((item, idx) => (
-              <span key={item.id ?? idx} className="tag item is-light" style={{ marginRight: '4px' }}>
-                {item.name ?? JSON.stringify(item)}
-              </span>
-            ))
-          : "Nema artikala"}
-      </p>
-
-      </div>
-      <div className='botuni'>
-      <button className='button is-primary'>Edit</button>
-      <button className='button is-danger'>Delete</button>
+          {store.items && store.items.length > 0
+            ? store.items.map((item, idx) => (
+                <span key={item.id ?? idx} className="tag item is-light" style={{ marginRight: '4px' }}>
+                  {item.name ?? JSON.stringify(item)}
+                </span>
+              ))
+            : "Nema artikala"}
+        </p>
       </div>
 
+      <div className="botuni">
+        <button className="button is-primary" onClick={onEdit}>Edit</button>
+        <button className="button is-danger" onClick={onDelete}>Delete</button>
+      </div>
     </div>
   );
 };
