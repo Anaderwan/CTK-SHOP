@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { AuthCard } from "./Components/AuthCard";
 import { StorePage } from "./Pages/StorePage";
 
+
 const App: React.FC = () => {
   return (
     <Routes>

@@ -1,10 +1,25 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 60px;
+  z-index: 1000;
   background: #1f1f1f;
+  border-bottom: 1px solid #444;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+}
+
+.nav-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
   align-items: center;
-  border-bottom: 1px solid #444;
 }
 
 .nav-left,
@@ -14,40 +29,103 @@
   gap: 1rem;
 }
 
+/* === LINKOVI S HOVER ANIMACIJOM === */
 .nav-link {
+  position: relative;
+  overflow: hidden;
   color: #E9E0D1;
   text-decoration: none;
-  padding: 8px 12px;
+  font-size: 16px;
+  padding: 10px 16px;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: color 0.3s ease, background 0.3s ease;
+  border: 1px solid transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #00A757;
+    z-index: 0;
+    transition: left 0.4s ease;
+  }
+
+  &:hover::before {
+    left: 0;
+  }
 
   &:hover {
-    background: #00A757;
     color: #2D2D2D;
+    border-color: #646cff;
   }
 
   &.active {
-    background: #00A757;
+    background-color: #00A757;
     color: #2D2D2D;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
   }
 }
 
+/* === DESNI DIO: Username + Logout === */
 .username {
   color: #E9E0D1;
   font-weight: bold;
+  font-size: 16px;
 }
 
+/* === Logout dugme s animacijom s desna na lijevo === */
 .logout-button {
-  background: transparent;
-  border: 2px solid #E9E0D1;
+  position: relative;
+  z-index: 1;
+  border: 1px solid transparent; // da omogući globalni hover border
+  overflow: hidden;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  box-sizing: border-box;
+  background-color: #1a1a1a;
   color: #E9E0D1;
-  padding: 6px 12px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: border-color 0.25s, color 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #E9E0D1;
+    z-index: 0;
+    transition: right 0.4s ease;
+  }
+
+  &:hover::before {
+    right: 0;
+  }
 
   &:hover {
-    background: #E9E0D1;
+    border-color: #646cff; // iz index.scss
     color: #2D2D2D;
+    
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
   }
 }

@@ -12,6 +12,38 @@
       "id": "2",
       "name": "Brodokomerc",
       "tags": []
+    },
+    {
+      "id": "3",
+      "name": "Konzum",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Lidl",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Spar",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Tommy",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
     }
   ],
   "items": [
