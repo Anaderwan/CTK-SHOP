@@ -1,0 +1,9 @@
+@use '../base/variables' as *;
+
+.container {
+  max-width: 1200px;
+  min-width: 600px;
+  margin: 20px auto;
+  padding: $padding;
+  display: block;
+}

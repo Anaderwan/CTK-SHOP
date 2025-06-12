@@ -1,0 +1,48 @@
+@use './base/variables' as *;
+@use './layout/layout';
+@use './components/navbar';
+@use './components/button';
+@use './pages/store';
+@use './pages/auth';
+@use './pages/item';
+@use './components/alert';
+@use './components/error-message';
+@use './components/edit-item-modal';
+@use './components/modal.scss';
+@use 'sass:color';
+
+
+// === RESET === //
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// === GLOBAL STYLE === //
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: $font-main;
+  background-color: $color-bg-body;
+  color: $color-light;
+  line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// === LINKS === //
+a {
+  color: $color-accent;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: color.adjust($color-accent, $lightness: 10%);
+  }
+}
+

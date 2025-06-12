@@ -1,0 +1,168 @@
+{
+  "stores": [
+    {
+      "id": "1",
+      "name": "Plodine",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Brodokomerc",
+      "tags": []
+    },
+    {
+      "id": "3",
+      "name": "Konzum",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Lidl",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Spar",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Tommy",
+      "tags": [
+        { "name": "supermarket" },
+        { "name": "discount" }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "1",
+      "name": "Domestos",
+      "price": 23,
+      "store": {
+        "id": 1,
+        "name": "Plodine"
+      },
+      "tags": [
+        {
+          "id": 1,
+          "name": "sanitarije"
+        },
+        {
+          "id": 2,
+          "name": "sprej"
+        },
+        {
+          "id": 3,
+          "name": "kupaonica"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Arial",
+      "price": 12,
+      "store": {
+        "id": 1,
+        "name": "Plodine"
+      },
+      "tags": [
+        {
+          "id": 1,
+          "name": "sanitarije"
+        },
+        {
+          "id": 3,
+          "name": "kupaonica"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Mikrovalna pečnica",
+      "price": 75,
+      "store": {
+        "id": 2,
+        "name": "Vivax 3443XL"
+      },
+      "tags": [
+        {
+          "id": 4,
+          "name": "kuhinja"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Laptop",
+      "price": 2,
+      "store": {
+        "id": 3,
+        "name": "Konzum"
+      },
+      "tags": [
+        {
+          "id": 5,
+          "name": "Informatika"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Majca",
+      "price": 9,
+      "store": {
+        "id": 4,
+        "name": "Lidl"
+      },
+      "tags": [
+        {
+          "id": 6,
+          "name": "radna odjeća"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Kukuruzni kruh",
+      "price": 3,
+      "store": {
+        "id": 5,
+        "name": "Spar"
+      },
+      "tags": [
+        {
+          "id": 7,
+          "name": "namirnice"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "papir",
+      "price": 100,
+      "store": {
+        "id": 6,
+        "name": "Tommy"
+      },
+      "tags": [
+        {
+          "id": 3,
+          "name": "Kupaonica"
+        }
+      ]
+    }
+  ]
+}

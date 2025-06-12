@@ -1,0 +1,76 @@
+@use '../base/variables' as *;
+
+.edit-item-modal {
+  padding: 2rem;
+  background-color: $color-surface;
+  border-radius: $radius;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  label {
+    color: $color-light;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    background: $color-dark;
+    color: $color-light;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .tag-entry {
+      background-color: $color-secondary;
+      color: $color-dark;
+      border-radius: $radius;
+      padding: 0.4rem 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $color-dark;
+
+        &:hover {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+
+  .new-tag-input {
+    display: flex;
+    gap: 0.5rem;
+
+    input {
+      flex: 1;
+    }
+
+    button {
+      white-space: nowrap;
+    }
+  }
+
+  .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
